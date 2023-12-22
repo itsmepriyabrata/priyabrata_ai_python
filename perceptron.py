@@ -1,17 +1,30 @@
-def simple_neural_network(input1, input2, weight1, weight2, bias):
-    
-    weighted_sum = (input1 * weight1) + (input2 * weight2)
+class Neuron:
+    def _init_(self, bias=0):
+        self.bias = bias
+        self.weights = []
 
-    output_neuron = 1 if weighted_sum + bias > 0 else 0
+    def add_input(self, neuron, weight):
+        self.weights.append((neuron, weight))
 
-    return output_neuron
+    def calculate_output(self):
+        total_input = sum(neuron.calculate_output() * weight for neuron, weight in self.weights)
+        return self.activation_function(total_input + self.bias)
 
-neuron_input1 = 0.8
-neuron_input2 = 0.4
-neuron_weight1 = 0.5
-neuron_weight2 = 0.7
-neuron_bias = -0.3
+    def activation_function(self, x):
+        # You can define your activation function here, for example, a simple step function
+        return 1 if x > 0 else 0
 
-output = simple_neural_network(neuron_input1, neuron_input2, neuron_weight1, neuron_weight2, neuron_bias)
 
-print("Output neuron:", output
+# Creating three neurons
+neuron1 = Neuron()
+neuron2 = Neuron()
+output_neuron = Neuron()
+
+# Connecting neurons
+output_neuron.add_input(neuron1, 0.5)
+output_neuron.add_input(neuron2, -0.5)
+
+# Calculating the output of the network
+result = output_neuron.calculate_output()
+
+print("Output:", result)
