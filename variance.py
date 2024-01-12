@@ -1,3 +1,4 @@
+#write a python program on hhow is variance calculated in statistics,and what does it represent
 def calculate_variance(data):
        n=len(data)
        mean=sum(data)/n
