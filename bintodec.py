@@ -1,5 +1,5 @@
 class BinaryDecimalConverter:
-    @staticmethod
+    
     def binary_to_decimal(binary_str):
         decimal_num = int(binary_str, 2)
         return decimal_num
