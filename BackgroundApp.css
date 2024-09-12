@@ -1,0 +1,13 @@
+.background {
+    background-image: url('C:\Users\priyabrata\Downloads\Recorder_Front-main\Recorder_Front-main\public\subtle-cinematics-acZd3gWgfOw-unsplash.jpg');  /* Path to your image in the public folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;  /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+  }
